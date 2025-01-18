@@ -1,0 +1,64 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.purple[200],
+          title: const Text(
+            'Programa Layout',
+            style: TextStyle(color: Colors.black),
+          ),
+          centerTitle: true,
+        ),
+        body: Column(
+          children: [
+            // Layout Superior
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              child: const Text(
+                'Layout Superior',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
+            // Área central
+            Expanded(
+              child: Container(
+                color: Colors.red,
+                alignment: Alignment.center,
+                child: const Text(
+                  'Meu Aplicativo',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            // Layout Inferior
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              child: const Text(
+                'Layout Inferior',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: Colors.purple[200],
+          child: const Icon(Icons.add),
+        ),
+      ),
+    );
+  }
+}
